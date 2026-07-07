@@ -855,7 +855,7 @@ section { padding: 110px 0; }
     .about-img { grid-area: img; max-width: 100%; }
     .about-img img { max-width: 100%; }
     .about-content .section-label { grid-area: label; }
-    .about-content .section-title { grid-area: title; }
+    .about-content .section-title { grid-area: title; font-size: 22px; }
     .services-list { grid-area: tags; }
     .about-catch { grid-area: catch; margin-top: 24px; }
     .about-text { grid-area: text; }
