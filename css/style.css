@@ -547,6 +547,9 @@ section { padding: 110px 0; }
     }
     .furniture-img3 { order: 1; }
     .furniture-content2 { order: 2; }
+    .furniture-img3 img {
+        height: auto;
+    }
     .furniture-heading2 {
         font-size: 25px;
     }
