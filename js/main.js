@@ -1,6 +1,13 @@
 // ===========================
-// 未瑠 / Miru - main.js
+// 紫陽花 / Ajisai - main.js
 // ===========================
+
+// --- PWA: オフライン対応のためService Workerを登録 ---
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    });
+}
 
 // --- Hero: スクロール中にアドレスバーが伸縮しても高さが変わらないようにする ---
 function setStableVh() {
@@ -144,19 +151,32 @@ document.addEventListener('keydown', (e) => {
 
 // --- Contact Form ---
 const form = document.getElementById('contactForm');
-form?.addEventListener('submit', (e) => {
+form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('.btn-primary');
     const originalText = btn.textContent;
     btn.textContent = '送信中...';
 
-    setTimeout(() => {
-        btn.textContent = '送信しました！';
-        btn.style.background = 'var(--accent-dark)';
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+        });
+        const result = await response.json();
+
+        if (result.success) {
+            btn.textContent = '送信しました！';
+            btn.style.background = 'var(--accent-dark)';
+            form.reset();
+            window.location.href = 'thanks.html';
+        } else {
+            throw new Error(result.message || 'submit failed');
+        }
+    } catch (err) {
+        btn.textContent = '送信に失敗しました';
         setTimeout(() => {
             btn.textContent = originalText;
-            btn.style.background = '';
-            form.reset();
         }, 3000);
-    }, 800);
+    }
 });

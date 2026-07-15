@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLBXVBNKV5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MLBXVBNKV5');
+    </script>
     <title>紫陽花 / Ajisai | 建築パースクリエイター</title>
     <meta name="description" content="「ずっと住みたい」と思える未来の空間を形にします。建築・インテリアパース / 3DCG制作 | 紫陽花 / Ajisai">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=58">
+    <link rel="stylesheet" href="css/style.css?v=59">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1A1A1A">
+    <link rel="icon" href="images/icon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/icon-180.png">
 </head>
 <body>
 
@@ -17,9 +29,12 @@
         <div class="nav-container">
             <a href="#" class="nav-logo"></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#works">Works</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero">Top<span class="nav-ja">トップ</span></a></li>
+                <li><a href="#works">Works<span class="nav-ja">作品</span></a></li>
+                <li><a href="#about">About<span class="nav-ja">プロフィール</span></a></li>
+                <li><a href="price.html">Price<span class="nav-ja">料金</span></a></li>
+                <li><a href="terms.html">Terms<span class="nav-ja">利用規約</span></a></li>
+                <li><a href="#contact">Contact<span class="nav-ja">お問い合わせ</span></a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="メニュー">
                 <span></span>
@@ -237,6 +252,9 @@
                 <p class="section-desc">お仕事のご依頼・ご相談はお気軽にどうぞ。</p>
             </div>
             <form class="contact-form reveal" id="contactForm">
+                <input type="hidden" name="access_key" value="b9a6aa06-1f5e-4368-b0ad-222b9d223846">
+                <input type="hidden" name="subject" value="【紫陽花パース】お問い合わせが届きました">
+                <input type="hidden" name="from_name" value="紫陽花 お問い合わせフォーム">
                 <div class="form-group">
                     <label for="name">お名前</label>
                     <input type="text" id="name" name="name" placeholder="田中 花子" required>
@@ -271,6 +289,10 @@
                 </div>
                 <p class="footer-copy">© 2026 紫陽花 / Ajisai. All rights reserved.</p>
             </div>
+            <div class="footer-legal">
+                <a href="tokushoho.html">特定商取引法に基づく表記</a>
+                <a href="privacy.html">プライバシーポリシー</a>
+            </div>
         </div>
     </footer>
 
@@ -280,6 +302,6 @@
         <img src="" alt="" class="lightbox-img" id="lightboxImg">
     </div>
 
-    <script src="js/main.js?v=3"></script>
+    <script src="js/main.js?v=4"></script>
 </body>
 </html>
